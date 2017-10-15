@@ -10,9 +10,13 @@ from scrapy.item import Item, Field
 
 class CrawlerProjectItem(Item):
     # define the fields for your item here like:
+    company = Field()
+    name = Field()
+    type = Field()
+    type_main = Field()
+    details = Field()
+    price = Field()
     url = Field()
-    link = Field()
-    pubdate = Field()
-    category = Field()
-    title = Field()
+    warranty = Field()
+
     # pass
