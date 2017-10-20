@@ -74,9 +74,9 @@ class AdviceAllitem2Spider(scrapy.Spider):
                    })
 
     def parse_dir_detail(self, response):
-        check = Selector(response).xpath('// main / section[3] / div / div[2] / table / tbody / tr[1] / th /text()').extract_first().strip()
+        check = Selector(response).xpath("//div[contains(@id,'pd_spec')]/table/tbody/tr[1]/td[1] /text()").extract_first().strip()
         if (check == 'Brand'):
-            company = Selector(response).xpath("// main / section[3] / div / div[2] / table[contains(@class,'table-info-product')] / tbody / tr[1] / td /text()").extract_first().strip()
+            company = Selector(response).xpath("//div[contains(@id,'pd_spec')]/table/tbody/tr[1]/td[2] /text()").extract_first().strip()
         else:
             company = 'no brand'
         item = CrawlerProjectItem()
